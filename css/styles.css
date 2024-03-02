@@ -1,0 +1,600 @@
+/* FUENTES */
+@font-face {
+    font-family: 'bebas';
+    src: url('../fonts/BebasNeue.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'trebuchet';
+    src: url('../fonts/TrebuchetMS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'icon';
+    src: url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg'),
+    url('../fonts/websymbols-regular-webfont.eot') format('embedded-opentype'),
+    url('../fonts/websymbols-regular-webfont.eot#iefix') format('embedded-opentype'),
+    url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+    url('../fonts/websymbols-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon{
+    font-family: 'icon';
+}
+/* ESTILOS GENERALES */
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* ESTILOS DEL BODY */
+body{
+    background-image: url('../img/pattern.png');
+    font-size: 16px;
+}
+/* CONTAINER */
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+/* ESTILOS DEL HEADER */
+#header{
+    background-color: #000000;
+    padding: 10px;
+    font-family: 'bebas';
+    color: white;
+}
+#header .logo{
+    float: left;
+    background-color: #37BCF9;
+    padding: 3px 50px;
+    font-family: 'bebas';
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: all ease 200ms;
+    cursor: pointer;
+    overflow: hidden;
+}
+#header .logo:hover{
+    border-radius: 2px;
+    color: black;
+    background-color: #ccc;
+}
+#header .logo:hover .gear{
+    animation: fromBellow 500ms linear;
+}
+@keyframes fromBellow{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+#header .logo:hover h3{
+    animation: fromRight 300ms linear;
+}
+@keyframes fromRight{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+#header .gear{
+    display: block;
+    float: left;
+    font-family: 'icon';
+    font-size: 2rem;
+    margin-right: 1rem;
+    /* animación */
+    animation-name: rotate-gear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotate-gear{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+#header h3{
+    float: left;
+    font-size: 2.5rem;
+}
+/* ESTILOS BARRA DE NAVEGACIÓN */
+#nav{
+    float: right;
+    letter-spacing: 1px;
+    margin-top: .9rem;
+}
+#nav ul li{
+    float: left;
+    font-size: 1.5rem;
+    list-style: none;
+    margin: 0 1.5rem;
+}
+#nav ul li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: all ease 200ms;
+}
+#nav ul li a:hover{
+    color: #37BCF9;
+    transform: scale(1.2, 1.2);
+}
+/* ESTILOS DEL BANNER */
+#banner{
+    margin: 20px 0;
+    padding: 25px;
+    background-image: url('../img/bakbaner.png');
+    background-position: -400px -230px;
+    border: 10px solid white;
+    box-shadow: 0 0 2px gray;
+    text-align: center;
+    overflow: hidden;
+    animation: backBanner 10s linear;
+}
+@keyframes backBanner{
+    0%{
+        background-position: 0px 0px;
+    }
+    100%{
+        background-position: -400px -230px;
+    }
+}
+#banner h1{
+    font-family: 'bebas';
+    color: white;
+    font-size: 45px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 3px black;
+    animation: showText 5s linear;
+}
+@keyframes showText{
+    0%{
+        transform: translateX(-600%) scale(3, 3);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(600%) scale(3, 3);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-600%) scale(3, 3);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%) scale(1, 1);
+        text-shadow: 2px 2px 3px black;
+        color: white;
+        opacity: 1;
+    }
+}
+/* ESTILO DE LAS CARTAS */
+#cards{
+    margin: 50px 0;
+}
+.card{
+    display: block;
+    float: left;
+    width: calc(20% - 40px);
+    height: 215px;
+    margin-right: 25px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 2px black;
+    text-align: center;
+    color: #00538C;
+    font-family: 'trebuchet';
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;
+}
+.card:hover{
+    background-color: black;
+}
+.card:nth-child(5){
+    margin-right: 0px !important;
+}
+.card .icon{
+    font-family: 'icon';
+    margin: 20px 0;
+    font-size: 2rem;
+    color: black;
+    transition: all 300ms;
+}
+.card:hover .icon{
+    font-size: 45px;
+    color: #37BCF9;
+    animation: showIcon 300ms linear;
+}
+@keyframes showIcon{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+.card .category{
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 300ms;
+}
+.card:hover .category{
+    color: white;
+    animation: showCategory 450ms linear;
+}
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%);
+        color: black;
+    }
+    to{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+.card .description{
+    margin: 20px 0;
+    font-size: 15px;
+    transition: all 300ms;
+}
+.card:hover .description{
+    color: white;
+    animation: showDescription 400ms linear;
+}
+@keyframes showDescription{
+    from{
+        transform: translateX(-300%);
+        color: black;
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+/* ESTILOS CONTENIDO PRINCIPAL (main) */
+#main{
+    width: 70%;
+    margin-top: 50px;
+    float: left;
+}
+#main .title{
+    background-color: white;
+    background-image: url('../img/pxgray.png');
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 3px 1px 1px #393D3F;
+    margin-bottom: 40px;
+}
+#main .title h2{
+    font-family: 'bebas';
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+#main .article{
+    background-color: white;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px gray;
+    font-family: 'trebuchet';
+}
+#main .article-head h3{
+    float: left;
+    font-size: 22px;
+    color: #00538C;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#main .article-head span{
+    display: block;
+    float: right;
+    padding: 10px;
+    background-color: #393D3F;
+    font-size: 13px;
+    color: white;
+    border-radius: 0 0 0 5px;
+}
+#main .article-body{
+    padding: 10px;
+}
+#main .article-body a{
+    text-decoration: none;
+    color: #00538C;
+}
+#main #blog{
+    margin-top: 60px;
+    text-align: center;
+    transition: all 600ms;
+}
+#main #blog a{
+    display: block;
+    padding: 35px;
+    font-family: 'bebas';
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #00538C;
+    text-decoration: none;
+    transition: all 600ms;
+}
+#main #blog:hover{
+    background-color: #333;
+    border: 10px solid #37BCF9;
+    border-radius: 240px;
+    box-shadow: 0 0 10px grey;
+    animation: blink 7s infinite linear;
+}
+@keyframes blink{
+    0%{
+        border: 10px solid #37BCF9;
+    }
+    25%{
+        border: 10px solid green;
+    }
+    50%{
+        border: 10px solid greenyellow;
+    }
+    75%{
+        border: 10px solid white;
+    }
+    100%{
+        border: 10px solid #37BCF9;
+    }
+}
+#main #blog:hover a{
+    color: white;
+    text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 6px 1px black;
+}
+/* ESTILOS BARRA LATERAL (aside) */
+#aside{
+    float: left;
+    width: calc(30% - 80px);
+    margin-top: 50px;
+    margin-left: 80px;
+}
+#aside h4{
+    background-color: white;
+    background-image: url('../img/pxgray.png');
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'bebas';
+    font-size: 27px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    box-shadow: 2px 3px 1px 1px #393D3F;
+}
+#aside h4:first-child{
+    margin-top: 0;
+}
+#search{
+    width: 90%;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #ccc inset;
+}
+#aside input[type='text']{
+    width: 80%;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ccc;
+    outline: none;
+    transition: all 300ms;
+}
+#aside input[type='text']:focus{
+    color: #555;
+}
+#aside input[type='button'],
+#aside input[type='submit']{
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid #ccc;
+    color: #555;
+    padding-left: 9px;
+}
+.aside-box{
+    width: 85%;
+    height: 240px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3), 0 1px white inset, 0 -3px 2px rgba(0, 0, 0, 0.3) inset;
+}
+#aside #login input[type='email'],
+#aside #login input[type='password']{
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #ccc inset;
+    border-radius: 5px;
+    padding: 0 5px 0 30px;
+    transition: all ease 300ms;
+}
+#aside #login input[type='email']:focus,
+#aside #login input[type='password']:focus{
+    outline: none;
+    color: #555;
+    box-shadow: 1px 1px 1px grey inset;
+}
+#aside #login #user,
+#aside #login #password{
+    display: block;
+    text-align: center;
+    position: absolute;
+    margin-left: 7px;
+    margin-top: 7px;
+    height: 30px;
+}
+#aside #login #password{
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+#aside #login input[type='submit'],
+#aside #login input[type='button'],
+#aside #login input[type='reset'],
+#aside #login button{
+    text-align: center;
+    width: 100px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+    background: linear-gradient(to bottom, #3EB8E5 0%, #2CA0CA 100%);
+    border: 1px solid #156785;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'trebuchet';
+    font-weight: lighter;
+    transition: all ease 300ms;
+}
+#aside #login input[type='submit']:hover,
+#aside #login input[type='button']:hover,
+#aside #login input[type='reset']:hover,
+#aside #login button:hover{
+    box-shadow: 0 0 3px grey;
+}
+#aside #login a{
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    color: #555;
+}
+#aside #login a:hover{
+    text-decoration: underline;
+    color: #2F78BC;
+}
+#aside #social{
+    height: 180px;
+}
+#aside #social a{
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 10px 0 20px 20px;
+}
+#aside #social .overlay{
+    display: block;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: -58px;
+    background-color: #F4F7FE;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 1px #ccc;
+    border: 3px solid white;
+    box-shadow: 0 0 5px #ccc;
+    transform: translateX(-70%);
+    opacity: 0;
+    cursor: pointer;
+    transition: all 400ms;
+}
+#aside #social > div:hover .overlay{
+    opacity: 1;
+    transform: translateX(0%);
+}
+/* ESTILOS DEL FOOTER */
+#footer{
+    background-color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#footer .row{
+    width: calc(30%);
+    float: left;
+}
+#footer .middle-row{
+    margin: 0 5%;
+}
+#footer h4{
+    background-color: white;
+    background-image: url('../img/pxgray.png');
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'bebas';
+    font-weight: normal;
+}
+#footer ul{
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: 'trebuchet';
+}
+#footer ul li a{
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid #A3A3A3;
+    text-decoration: none;
+    color: #37BCF9;
+    transition: all 300ms;
+}
+#footer ul li:hover a{
+    color: white;
+    padding-left: 40px;
+}
+#footer .langs-logo{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+#footer .browser-logos{
+    text-align: center;
+}
+#footer .browser-logos img{
+    width: 40px;
+    margin: 15px 5px;
+}
+#footer iframe{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px white;
+}
+#footer .autor{
+    color: white;
+    font-family: 'trebuchet';
+    margin-top: 15px;
+    text-align: center;
+}
+/* CLEARFIX */
+.clearfix{
+    float: none;
+    clear: both;
+}
