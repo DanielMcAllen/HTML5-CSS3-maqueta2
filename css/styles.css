@@ -555,6 +555,7 @@ body{
     margin-left: 20px;
     font-size: 25px;
     font-family: 'trebuchet';
+    list-style: none;
 }
 #footer ul li a{
     display: block;
